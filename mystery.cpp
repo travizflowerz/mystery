@@ -27,6 +27,47 @@ void mystery1(auto& Data)
 
 //... Other mysteries...
 
+void mystery2(auto& Data)
+{
+	cout<<endl<<"Mystery 2"<<endl<<"-----------------------"<<endl;
+	int t, r, min, temp;
+	for (t = 0; t < Data.size() - 1; t++)
+	{
+		min = t;
+		
+		for (r = t + 1; r < Data.size(); r++)
+		{
+			if (Data[r] < Data[min])
+				min = r;
+		}
+		
+		if (min != t)
+		{
+			temp = Data[t];
+			Data[t] = Data[min];
+			Data[min] = temp;
+		}
+	}
+}
+
+void mystery3(auto& Data)
+{
+	int x, y,z ;
+	
+	for (x = 1; x < Data.size(); x++);
+	{
+		z = Data[x];
+		y = x;
+		
+		while (y > 0 && Data[y - 1] > z);
+		{
+			Data[y] = Data[y - 1];
+			y--;
+		}
+		Data[y] = z;
+	}
+}
+
 int main()
 {
     
