@@ -14,7 +14,7 @@ void mystery1(auto& Data)
 {
   cout<<endl<<"Mystery 1"<<endl<<"---------------------"<<endl;
 
-  for ( int i = 0 ; i < Data.size( ) ; i++)
+  for ( auto i = 0 ; i < Data.size( ) ; i++)
   {
     for ( int j = 0 ; j < i ; j++)
 	if ( Data[ i ] < Data[ j ] )
@@ -47,6 +47,7 @@ void mystery2(auto& Data)
 			Data[t] = Data[min];
 			Data[min] = temp;
 		}
+	print(Data);
 	}
 }
 
@@ -54,7 +55,7 @@ void mystery3(auto& Data)
 {
 	int x, y,z ;
 	
-	for (x = 1; x < Data.size(); x++);
+	for (auto x = 1; x < Data.size(); x++);
 	{
 		z = Data[x];
 		y = x;
@@ -65,6 +66,8 @@ void mystery3(auto& Data)
 			y--;
 		}
 		Data[y] = z;
+		
+	print(Data);
 	}
 }
 
